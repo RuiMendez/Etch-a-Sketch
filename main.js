@@ -1,3 +1,20 @@
 "use strict";
 
-const sketchContainer = document.querySelector(".sketch-container");
+const sketchContainer = document.getElementById("sketch-container");
+
+const size = 16;
+
+function createGrid(amountOfGrids) {
+    for (let i = 0; i < amountOfGrids; i++) {
+        const row = document.createElement("div");
+        row.classList.add("grid-row");
+        for (let j = 0; j < amountOfGrids; j++) {
+            const columnBox = document.createElement("div");
+            columnBox.classList.add("grid-box");
+            row.appendChild(columnBox);
+        }
+        sketchContainer.appendChild(row);
+    }
+}
+
+createGrid(size);
