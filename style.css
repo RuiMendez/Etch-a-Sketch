@@ -1,5 +1,5 @@
-.sketch-container {
-    width: 500px;
+#sketch-container {
+    width: 960px;
 }
 
 .grid-row {
@@ -7,8 +7,6 @@
 }
 
 .grid-box {
-    width: 50px;
-    height: 50px;
     border: solid white 1px;
     background-color: blue;
 }
