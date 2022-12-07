@@ -16,7 +16,7 @@ function createGrid(amountOfGrids) {
             const gridBox = document.createElement("div");
 
             gridBox.classList.add("grid-box");
-            const heightAndWidth = 960 / size;
+            const heightAndWidth = 960 / amountOfGrids;
 
             gridBox.style.height = `${heightAndWidth}px`;
 
@@ -24,6 +24,9 @@ function createGrid(amountOfGrids) {
 
             gridBox.addEventListener("mouseenter", () => {
                 gridBox.style.backgroundColor = "white";
+                console.log(
+                    `height: ${gridBox.style.height} width: ${gridBox.style.width}`
+                );
             });
             row.appendChild(gridBox);
         }

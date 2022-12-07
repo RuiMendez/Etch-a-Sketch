@@ -1,5 +1,6 @@
 #sketch-container {
     width: 960px;
+    height: auto;
 }
 
 .grid-row {
