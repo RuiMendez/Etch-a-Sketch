@@ -16,7 +16,7 @@ function createGrid(amountOfGrids) {
             const gridBox = document.createElement("div");
 
             gridBox.classList.add("grid-box");
-            const heightAndWidth = 960 / amountOfGrids;
+            const heightAndWidth = 480 / amountOfGrids;
 
             gridBox.style.height = `${heightAndWidth}px`;
 
