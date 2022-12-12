@@ -23,10 +23,7 @@ function createGrid(amountOfGrids) {
             gridBox.style.width = `${heightAndWidth}px`;
 
             gridBox.addEventListener("mouseenter", () => {
-                gridBox.style.backgroundColor = "white";
-                console.log(
-                    `height: ${gridBox.style.height} width: ${gridBox.style.width}`
-                );
+                gridBox.style.backgroundColor = "black";
             });
             row.appendChild(gridBox);
         }
