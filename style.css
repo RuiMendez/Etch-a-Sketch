@@ -7,6 +7,16 @@
 #sketch-container {
     width: 480px;
     height: auto;
+    border: solid black;
+}
+
+.sketch-frame {
+    border: solid black;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .grid-row {
@@ -14,6 +24,6 @@
 }
 
 .grid-box {
-    border: solid white 1px;
-    background-color: blue;
+    border: solid grey 1px;
+    background-color: white;
 }
