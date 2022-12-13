@@ -39,6 +39,7 @@ createGrid(size);
 slider.addEventListener("input", function(e) {
     size = e.target.value;
     slideText.textContent = `${size} x ${size}`;
+    reset();
 });
 
 function reset() {
@@ -46,7 +47,3 @@ function reset() {
     outterBox.remove();
     createGrid(size);
 }
-
-button.addEventListener("click", () => {
-    reset();
-});
