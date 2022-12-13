@@ -2,8 +2,10 @@
 
 const sketchContainer = document.getElementById("sketch-container");
 const button = document.querySelector(".button");
+const slider = document.querySelector(".slider");
+let slideText = document.querySelector(".slide-text");
 
-const size = 16;
+let size = 16;
 
 function createGrid(amountOfGrids) {
     let outterBox = document.createElement("div");
@@ -34,18 +36,17 @@ function createGrid(amountOfGrids) {
 
 createGrid(size);
 
-function resetEtch() {
-    button.addEventListener("click", () => {
-        let sizeChoice = Number(prompt("Type the desired size between 1 and 100"));
-        while (sizeChoice > 100) {
-            sizeChoice = Number(
-                prompt("You can only choose a number between 1 and 100")
-            );
-        }
-        let outterBox = document.querySelector(".outterBox");
-        outterBox.remove();
-        createGrid(sizeChoice);
-    });
+slider.addEventListener("input", function(e) {
+    size = e.target.value;
+    slideText.textContent = `${size} x ${size}`;
+});
+
+function reset() {
+    let outterBox = document.querySelector(".outterBox");
+    outterBox.remove();
+    createGrid(size);
 }
 
-resetEtch();
+button.addEventListener("click", () => {
+    reset();
+});
