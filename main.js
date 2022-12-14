@@ -5,9 +5,10 @@ const button = document.querySelector(".button");
 const slider = document.querySelector(".slider");
 let slideText = document.querySelector(".slide-text");
 const colorPicker = document.getElementById("colorpicker");
+const gridSquare = document.querySelector("grid-box");
 
 let size = 16;
-let color;
+let color = "black";
 
 function createGrid(amountOfGrids) {
     let outterBox = document.createElement("div");
@@ -49,8 +50,8 @@ slider.addEventListener("input", function(e) {
     reset();
 });
 
-function reset() {
+/*function reset() {
     let outterBox = document.querySelector(".outterBox");
     outterBox.remove();
     createGrid(size);
-}
+}*/
