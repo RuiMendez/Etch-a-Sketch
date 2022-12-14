@@ -4,8 +4,10 @@ const sketchContainer = document.getElementById("sketch-container");
 const button = document.querySelector(".button");
 const slider = document.querySelector(".slider");
 let slideText = document.querySelector(".slide-text");
+const colorPicker = document.getElementById("colorpicker");
 
 let size = 16;
+let color;
 
 function createGrid(amountOfGrids) {
     let outterBox = document.createElement("div");
@@ -25,7 +27,7 @@ function createGrid(amountOfGrids) {
             gridBox.style.width = `${heightAndWidth}px`;
 
             gridBox.addEventListener("mouseenter", () => {
-                gridBox.style.backgroundColor = "black";
+                gridBox.style.backgroundColor = color;
             });
             row.appendChild(gridBox);
         }
@@ -35,6 +37,11 @@ function createGrid(amountOfGrids) {
 }
 
 createGrid(size);
+
+colorPicker.addEventListener("input", function(e) {
+    color = e.target.value;
+    colorPicker.style.backgroundColor = color;
+});
 
 slider.addEventListener("input", function(e) {
     size = e.target.value;
