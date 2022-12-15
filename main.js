@@ -5,8 +5,10 @@ const button = document.querySelector(".button");
 const slider = document.querySelector(".slider");
 let slideText = document.querySelector(".slide-text");
 const colorPicker = document.getElementById("colorpicker");
-const rainbowButton = document.querySelector(".rainbow-button");
+const confettiButton = document.querySelector(".confetti-button");
+const colorButton = document.querySelector(".color-button");
 
+let currentMode = "color";
 let size = 16;
 let color = "black";
 
@@ -38,13 +40,35 @@ function createGrid(amountOfGrids) {
 }
 
 createGrid(size);
-////////////////////////////////////////////////
-function changeColor(e) {}
 
+////Mode Selection/////
+
+function setCurrentMode(newMode) {
+    currentMode = newMode;
+}
+
+colorButton.onclick = () => setCurrentMode("color");
+
+confettiButton.onclick = () => setCurrentMode("confetti");
+////////////////////////
+function changeColor(e) {
+    if (currentMode === "color") {
+        e.target.style.backgroundColor = color;
+    } else if (currentMode === "confetti") {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    }
+}
+
+///////////
 colorPicker.addEventListener("input", function(e) {
     color = e.target.value;
     colorPicker.style.backgroundColor = color;
 });
+
+////////////slide range event listener
 
 slider.addEventListener("input", function(e) {
     size = e.target.value;
@@ -57,22 +81,3 @@ function reset() {
     outterBox.remove();
     createGrid(size);
 }
-
-////rainbow mode
-
-/*function getRandomInt(max) {
-    return Math.floor(Math.random() * (max + 1));
-}
-
-function getRandomRBG() {
-    let r = getRandomInt(255);
-    let b = getRandomInt(255);
-    let g = getRandomInt(255);
-    return `rgb(${r}, ${b}, ${g})`;
-}
-
-let randomRBGColorCode = getRandomRBG();
-
-rainbowButton.addEventListener("click", () => {
-    gridSquare.style.backgroundColor = randomRBGColorCode;
-});*/
