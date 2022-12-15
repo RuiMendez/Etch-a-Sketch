@@ -10,9 +10,8 @@
     align-items: center;
 }
 
-#sketch-container {
+.outterBox {
     width: 480px;
-    height: auto;
     border: solid black;
 }
 
@@ -31,7 +30,7 @@
 }
 
 .grid-box {
-    border: solid grey 1px;
+    /*border: solid grey 1px;*/
     background-color: white;
 }
 
