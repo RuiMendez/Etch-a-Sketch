@@ -73,6 +73,7 @@ h1 {
     padding: 10px 35px;
     border: solid black;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .color-box {
@@ -99,6 +100,7 @@ p {
     padding-left: 54px;
     padding-right: 54px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .confetti-button {
@@ -108,4 +110,5 @@ p {
     padding-left: 46px;
     padding-right: 46px;
     border-radius: 20px;
+    cursor: pointer;
 }
