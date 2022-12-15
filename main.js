@@ -5,11 +5,12 @@ const button = document.querySelector(".button");
 const slider = document.querySelector(".slider");
 let slideText = document.querySelector(".slide-text");
 const colorPicker = document.getElementById("colorpicker");
-const gridSquare = document.querySelector("grid-box");
+const rainbowButton = document.querySelector(".rainbow-button");
 
 let size = 16;
 let color = "black";
 
+/////function that creates the grid//////////////////
 function createGrid(amountOfGrids) {
     let outterBox = document.createElement("div");
     outterBox.classList.add("outterBox");
@@ -27,9 +28,8 @@ function createGrid(amountOfGrids) {
 
             gridBox.style.width = `${heightAndWidth}px`;
 
-            gridBox.addEventListener("mouseenter", () => {
-                gridBox.style.backgroundColor = color;
-            });
+            gridBox.addEventListener("mouseenter", changeColor);
+
             row.appendChild(gridBox);
         }
         outterBox.appendChild(row);
@@ -38,6 +38,8 @@ function createGrid(amountOfGrids) {
 }
 
 createGrid(size);
+////////////////////////////////////////////////
+function changeColor(e) {}
 
 colorPicker.addEventListener("input", function(e) {
     color = e.target.value;
@@ -50,8 +52,27 @@ slider.addEventListener("input", function(e) {
     reset();
 });
 
-/*function reset() {
+function reset() {
     let outterBox = document.querySelector(".outterBox");
     outterBox.remove();
     createGrid(size);
-}*/
+}
+
+////rainbow mode
+
+/*function getRandomInt(max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+
+function getRandomRBG() {
+    let r = getRandomInt(255);
+    let b = getRandomInt(255);
+    let g = getRandomInt(255);
+    return `rgb(${r}, ${b}, ${g})`;
+}
+
+let randomRBGColorCode = getRandomRBG();
+
+rainbowButton.addEventListener("click", () => {
+    gridSquare.style.backgroundColor = randomRBGColorCode;
+});*/

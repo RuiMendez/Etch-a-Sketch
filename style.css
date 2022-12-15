@@ -92,7 +92,16 @@ p {
     align-items: center;
 }
 
-.rainbow-button {
+.color-button {
+    margin-top: 20px;
+    border: solid black;
+    padding: 20px;
+    padding-left: 52px;
+    padding-right: 52px;
+    border-radius: 20px;
+}
+
+.confetti-button {
     margin-top: 20px;
     border: solid black;
     padding: 20px;
